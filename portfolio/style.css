@@ -64,6 +64,28 @@ body {
 .button-gold:hover {
     color: white;
 }
+
+.button-black {
+    border: 2px solid #BDAE82;
+    background-color: transparent;
+    cursor: pointer;
+    font-family: inherit;
+    height: 55px;
+    width: 220px;
+
+    color: #bdae82;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.2;
+
+    transition: 0.5s;
+}
+
+.button-black:hover {
+    color: white;
+}
 /* header block finish*/
 
 
@@ -135,7 +157,7 @@ body {
 /* main block start*/
 
 .hero {
-    height: 910px;
+    height: 820px;
     background: url('./assets/img/hero_img.jpg');
     background-position: center -90px;
     margin: 0 auto;
@@ -259,11 +281,21 @@ body {
     transition: 0.3s;
 }
 
-/* .wrapper {
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0;
-} */
+.portfolio-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 60px;
+    gap: 5px;   
+}
+
+.portfolio-items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-top: 60px;
+    gap: 25px;
+}
 
 /* main block finish*/
 
