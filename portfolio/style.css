@@ -37,7 +37,7 @@ body {
     /* padding: 0 20px; */
 }
 
-.container-header {
+.container-1440 {
     padding: 0 20px;
 }
 
@@ -58,7 +58,7 @@ body {
     font-size: 20px;
     line-height: 1.2;
 
-    transition: 0.3s;
+    transition: 0.5s;
 }
 
 .button-gold:hover {
@@ -90,7 +90,7 @@ body {
 .nav-link {
     padding: 0 20px;
     line-height: 50px;
-    transition: .3s;
+    transition: .5s;
     margin-right: 30px;
 
     text-decoration: none;
@@ -179,6 +179,10 @@ body {
     margin: 0 auto;
 }
 
+.section-skills {
+    padding: 0 20px;
+}
+
 .section-title {
     font-family: 'Merriweather', serif;
     font-style: normal;
@@ -195,11 +199,65 @@ body {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    padding-top: 60px;
 }
 
 .skill-item {
     background-position: center top;
-  }
+    height: 240px;
+    width: 320px;
+    text-align: center;
+
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 36px;
+}
+
+.skill-title {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 40px;
+    height: 120px;
+    text-align:center;
+    color: #FFFFFF;
+    padding-top: 50px;
+}
+
+.skill-item:nth-child(1) {
+    background-image: url('./assets/svg/camera\ 1.svg');
+    background-size: 62px 50px;
+    background-repeat: no-repeat;
+    background-position: center 0;
+    transition: 0.s;
+}
+
+.skill-item:nth-child(2) {
+    background-image: url('./assets/svg/video\ 1.svg');
+    background-size: 62px 50px;
+    background-repeat: no-repeat;
+    background-position: center 0;
+    transition: 0.3s;
+}
+
+.skill-item:nth-child(3) {
+    background-image: url('./assets/svg/image\ 1.svg');
+    background-size: 62px 50px;
+    background-repeat: no-repeat;
+    background-position: center 0;
+    transition: 0.3s;
+}
+
+.skill-item:nth-child(4) {
+    background-image: url('./assets/svg/mic\ 1.svg');
+    background-size: 62px 50px;
+    background-repeat: no-repeat;
+    background-position: center 0;
+    transition: 0.3s;
+}
 
 /* .wrapper {
     max-width: 1440px;
