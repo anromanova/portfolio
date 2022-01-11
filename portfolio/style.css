@@ -108,7 +108,6 @@ body {
 }
 
 .nav-link {
-    padding: 0 20px;
     line-height: 50px;
     transition: .5s;
     margin-right: 30px;
@@ -124,7 +123,7 @@ body {
 }
 
 .button-switcher {
-    padding: 0;
+    padding: 5px;
     line-height: 50px;
     transition: .3s;
 
@@ -186,6 +185,7 @@ body {
     font-size: 20px;
     line-height: 40px;
     height: 120px;
+    margin-top: 10px;
 }
 
 .title-container {
@@ -222,7 +222,10 @@ body {
     height: 120px;
     text-align:center;
     color: #FFFFFF;
-    padding-top: 50px;
+    padding-top: 80px;
+}
+.skill-text {
+    padding-left: 10px;
 }
 
 .skills-items {
@@ -345,6 +348,7 @@ body {
     font-weight: 700;
     font-size: 28px;
     line-height: 56px;
+    margin-top: 40px;
 }
 
 .price-price {
@@ -352,9 +356,8 @@ body {
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
-    line-height: 48px;
     color: #BDAE82;
-    padding: 20px;
+    margin-bottom: 30px;
 }
 
 .price-text {
@@ -364,6 +367,10 @@ body {
     font-size: 18px;
     line-height: 36px;
     display: block;
+}
+
+.price-t {
+    margin-top: 30px;
 }
 
 .button-price {
@@ -406,7 +413,7 @@ textarea {
     background: rgba(0, 0, 0, 0.5);
     box-sizing: border-box;
     margin-bottom: 30px;   
-    padding-left: 20px;
+    padding: 10px 20px;
 }
 
 .contacts-title {
@@ -418,9 +425,9 @@ textarea {
     color: #BDAE82;
     background-color: transparent;
     display: inline;
-    padding: 10px;
+    padding: 0px;
+    margin-top: 60px;
     margin-bottom: 40px;
-    align-self: left;
 }
 
 ::placeholder {
@@ -435,13 +442,11 @@ textarea {
 .footer-content {
     display: flex;
     height: 150px;
-    padding: 20px, 50px;
     justify-content: space-between;
     align-items: center;
 
     font-family: 'Inter', sans-serif;
     font-style: normal;
-    font-weight: 400px;
     font-size: 20px;
     line-height: 50px;
     color: #FFFFFF;
@@ -451,7 +456,6 @@ textarea {
 .footer-content a {
     font-family: 'Inter', sans-serif;
     font-style: normal;
-    font-weight: 400px;
     font-size: 20px;
     line-height: 50px;
     color: #FFFFFF;
@@ -477,11 +481,12 @@ textarea {
 }
 
 .li-footer {
-    margin-right: 20px;
+    margin-right: 25px;
 }
 
 .footer-link {
     margin-right: 20px;
+    margin-top: 15px;
 }
 
 .footer-link:hover {
