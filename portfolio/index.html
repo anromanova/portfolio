@@ -15,41 +15,44 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
-        <div class="container container-1440">
-            <div class="header-wrapper">
-                <nav class="header_nav">
-                    <div class="header-logo">
-                        <a href="#" class="header-logo-link">
-                            <img src="./assets/svg/logo_header.svg" alt="logo for Alexa" class="header-logo-img">
-                        </a>
-                    </div>
-                        <ul class="nav-list">
-                            <li class="nav-item"><a href="#skills" class="nav-link" data-i18="skills">Skills</a></li>
-                            <li class="nav-item"><a href="#portfolio" class="nav-link" data-i18="portfolio">Portfolio</a></li>
-                            <li class="nav-item"><a href="#video" class="nav-link" data-i18="video">Video</a></li>
-                            <li class="nav-item"><a href="#price" class="nav-link" data-i18="price">Price</a></li>
-                            <li class="nav-item"><a href="#contacts" class="nav-link" data-i18="contacts">Contacts</a></li>
-                          </ul>
-                    <div class="burger_media">
-                        <div class="language-switcher"><a class="button-switcher active en" href="#!" >en</a><span>/</span><a class="button-switcher ru" href="#">ru</a></div>
-                        <div class="burger">
-                            <div class="line line1"></div>
-                            <div class="line line2"></div>
-                            <div class="line line3"></div>
-                          </div>
-                          <div class="theme-switcher" id="toggle-theme">
-                              <a href="#" class="theme-logo-link">
-                                <img src="./assets/svg/sun.svg" alt="" class="theme-logo-img">
-                              </a>
-                          </div>
-                    </div>
-                  </nav>
+    <div class="background">
+        <header class="header">
+            <div class="container container-1440">
+                <div class="header-wrapper">
+                    <nav class="header_nav">
+                        <div class="header-logo">
+                            <a href="#" class="header-logo-link">
+                                <img src="./assets/svg/logo_header.svg" alt="logo for Alexa" class="header-logo-img">
+                            </a>
+                        </div>
+                            <ul class="nav-list">
+                                <li class="nav-item"><a href="#skills" class="nav-link" data-i18="skills">Skills</a></li>
+                                <li class="nav-item"><a href="#portfolio" class="nav-link" data-i18="portfolio">Portfolio</a></li>
+                                <li class="nav-item"><a href="#video" class="nav-link" data-i18="video">Video</a></li>
+                                <li class="nav-item"><a href="#price" class="nav-link" data-i18="price">Price</a></li>
+                                <li class="nav-item"><a href="#contacts" class="nav-link" data-i18="contacts">Contacts</a></li>
+                              </ul>
+                        <div class="burger_media">
+                            <div class="language-switcher"><a class="button-switcher active en" href="#!" >en</a><span class="span_lang">/</span><a class="button-switcher ru" href="#">ru</a></div>
+                            <div class="burger">
+                                <div class="line line1"></div>
+                                <div class="line line2"></div>
+                                <div class="line line3"></div>
+                              </div>
+                              <div class="theme-switcher toggle-theme">
+                                  <a href="#" class="theme-logo-link theme-logo sun">
+                                    <!-- <img src="./assets/svg/sun.svg" alt="" class="theme-logo-img"> -->
+                                  </a>
+                              </div>
+                        </div>
+                      </nav>
+                </div>
             </div>
-        </div>
-    </header>
+        </header>
+    </div>
     <main class="main">
-        <div class="container">
+        <div class="background">
+            <div class="container">
                 <section class="section hero">
                     <div class="hero-card">
                         <h1 class="hero-title" data-i18="hero-title">Alexa Rise</h1>
@@ -59,6 +62,9 @@
                         <button class="button-gold" data-i18="hire">Hire me</button>
                     </div>
                 </section>
+            </div>
+        </div>
+        <div class="container">
                 <section class="section skills container-1440">
                     <div class="title-container">
                         <h2 class="section-title" id="skills" data-i18="skills">Skills</h2>
@@ -153,16 +159,20 @@
                         </div>
                     </div>
                 </section>
-                <section class="section contacts">
-                    <div class="contacts-card">
-                        <h2 class="section-title contacts-title" id="contacts" data-i18="contact-me">Contact me</h2>
-                        <input type="email" placeholder="E-mail" data-i18="placeholder-email">
-                        <input type="tel" placeholder="Phone" data-i18="placeholder-phone">
-                        <textarea placeholder="Message" data-i18="placeholder-message"></textarea>
-                        <button class="button-gold contacts-button" data-i18="send-message">Send message</button>
-                    </div>     
-                </section>
-        </div>
+            </div>
+                <div class="background">
+                    <div class="container">
+                        <section class="section contacts">
+                            <div class="contacts-card">
+                                <h2 class="section-title contacts-title" id="contacts" data-i18="contact-me">Contact me</h2>
+                                <input type="email" placeholder="E-mail" data-i18="placeholder-email">
+                                <input type="tel" placeholder="Phone" data-i18="placeholder-phone">
+                                <textarea placeholder="Message" data-i18="placeholder-message"></textarea>
+                                <button class="button-gold contacts-button" data-i18="send-message">Send message</button>
+                            </div>     
+                        </section>
+                    </div>
+                </div>
     </main>
     <footer class="footer">
         <div class="container">

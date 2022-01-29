@@ -99,6 +99,7 @@ const i18Obj = {
 //   export default i18Obj;
 
 //Adaptive menu 
+
 const burger = document.querySelector('.burger');
 const menu = document.querySelector('.nav-list');
 const links = document.querySelectorAll('.nav-link');
@@ -117,6 +118,7 @@ burger.addEventListener('click', toggleMenu);
 
 
 //Portfolio button
+
 const portfolioBtns = document.querySelector('.portfolio-buttons');
 const portfolioBtn = document.querySelectorAll('.portfolio-button');
 const portfolioImages = document.querySelectorAll('.portfolio-img');
@@ -139,27 +141,40 @@ function changeImage(event) {
     event.target.classList.add('active');
   }
 
-  //Language switcher
+//Language switchers
 
 const lang = document.querySelectorAll('[data-i18]');
 const russianLanguage = document.querySelector('.ru');
 const englishLanguage = document.querySelector('.en');
 const buttonLanguages = document.querySelector('.button-switcher')
 
+const currentLang = localStorage.getItem('lang');
 
 
 russianLanguage.addEventListener('click', () => getTranslate('ru'));
 englishLanguage.addEventListener('click', () => getTranslate('en'));
 
-function getTranslate(languge) {
-    lang.forEach((element) => {element.textContent = i18Obj[languge][element.dataset.i18];
+function getTranslate(language) {
+    lang.forEach((element) => {element.textContent = i18Obj[language][element.dataset.i18];
         if (element.placeholder) {
-            element.placeholder = element.input = i18Obj[languge][element.dataset.i18];}}
+            element.placeholder = element.input = i18Obj[language][element.dataset.i18];}}
     )
-        // currentElement.placeholder = // Ваш код
-        // currentElement.textContent = ''
       }
 
+// function setLocalStorage() {
+//     localStorage.setItem('lang', lang);
+//       }
+  
+//     window.addEventListener('beforeunload', setLocalStorage)
+
+// function getLocalStorage() {
+//       if(localStorage.getItem('lang')) {
+//         const lang = localStorage.getItem('lang');
+//         getTranslate(lang);
+//       }
+//     }
+
+//     window.addEventListener('load', getLocalStorage)
 
 // function toggleLanguage(event) {
 //     buttonLanguages.forEach((a) => a.classList.remove('active'));
@@ -170,27 +185,46 @@ function getTranslate(languge) {
 //   russianLanguage.addEventListener('click', toggleLanguage);
 //   englishLanguage.addEventListener('click', toggleLanguage);
 
+
 // Theme switcher
-// const page = document.querySelector('body');
-// const themeButton = document.querySelector('.theme-switcher');
+
+const toggleBtn = document.querySelector('.theme-logo-link');
+const theme = document.querySelector('html');
+const currentTheme = localStorage.getItem('theme-logo');
 
 
-// themeButton.addEventListener('click', () => {document.documentElement.style.setProperty('--text-color', '#000')})
+function changeTheme(name) {
+  theme.setAttribute('data-theme', name);
+  localStorage.setItem('theme', name);
+  localStorage.setItem('theme-logo', name);
+  toggleBtn.classList.toggle('moon');
+
+}
+
+if (currentTheme === 'light-theme') {
+  theme.setAttribute('data-theme', currentTheme)
+  // toggleBtn.classList.add('moon')
+} else {
+  changeTheme('dark-theme')
+  toggleBtn.classList.add('moon')
+}
+
+
+toggleBtn.addEventListener('click', () => {
+  if (theme.getAttribute('data-theme') === 'dark-theme') {
+    changeTheme('light-theme')
+  }
+  else {
+    changeTheme('dark-theme')
+  }
+});
+
 
 // function changeTheme() {
-//     document.documentElement.style.setProperty('--text-color', '#000');
-//     document.documentElement.style.setProperty('--body-color', '#fff');
-//     document.documentElement.style.setProperty('--body-color', '#fff');
-//   }
-
-//   themeButton.addEventListener('click', changeTheme)
-
-const toggleBtn = document.querySelector("#toggle-theme");
-toggleBtn.addEventListener("click", function() {
-    if(document.documentElement.hasAttribute("theme")){
-        document.documentElement.removeAttribute("theme");
-    }
-    else{
-        document.documentElement.setAttribute("theme", "light_theme");
-    }
-});
+//     if(document.documentElement.hasAttribute('theme')){
+//         document.documentElement.removeAttribute('theme');
+//     }
+//     else{
+//         document.documentElement.setAttribute('theme', 'light-theme');
+//     }
+// };
