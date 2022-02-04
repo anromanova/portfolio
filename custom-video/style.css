@@ -1,0 +1,218 @@
+:root {
+    --body-color: #000;
+    --text-color: #ffff;
+    --title-color: #bdae82;
+    --hoover-color: #bdae82;
+    --font-standard: 18px;
+    --font-large: 20px;
+    --active-color: #bdae82;
+    --background-color: #9b9e9f;
+}
+
+* {
+    box-sizing: border-box;
+  }
+
+*::before, *::after {
+    box-sizing: inherit;
+}
+
+html {
+    scroll-behavior: smooth; 
+    overflow-x:  hidden;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0; 
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background-color: var(--body-color);
+
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: var(--font-standard);
+    line-height: 1.2;
+    color: var(--text-color);
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+main {
+    display: block;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    min-height: 100px;
+}
+
+.video-player {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    max-height: 705px;
+    overflow: hidden;
+}
+
+.video {
+    width: calc(100%);
+    height: auto;
+}
+
+.video-player-button {
+    position: absolute;
+    z-index: 10;
+    cursor: pointer;
+    background-image: url("./assets/svg/play-btn.svg");
+    height: 130px;
+    width: 130px;
+    background-color: transparent;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: none;
+    background-size: contain;
+    transition: 0.5s;
+}
+
+.video-player-button_hidden {
+    display: none;
+    cursor: pointer;
+    height: 130px;
+    width: 130px;
+    background-color: transparent;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: none;
+    background-size: contain;
+    transition: 0.5s;
+}
+
+.video-player-button:hover {
+filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(
+    7deg
+    ) brightness(92%) contrast(87%);
+}
+
+.controls {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: calc(100%);
+    height: 60px;
+    padding: 20px;
+}
+
+.control-ico {
+    width: 40px;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.control-ico:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+
+.play-ico {
+    background-image: url(./assets/svg/play.svg);
+}
+
+.pause-ico {
+    background-image: url(./assets/svg/pause.svg);
+}
+
+.volume-ico {
+    background-image: url(./assets/svg/volume.svg);
+}
+
+.mute-ico {
+    background-image: url(./assets/svg/mute.svg);
+}
+
+.progress-range {
+    background: linear-gradient(to right, var(--active-color) 0%, var(--active-color) 0%, var(--background-color) 0%, var(--background-color) 100%);
+    border-radius: 0px;
+    height: 10px;
+    width: calc(80% - 160px);
+    outline: none;
+    transition: background 450ms ease-in;
+    -webkit-appearance: none;
+}
+
+.volume-range {
+    background: linear-gradient(to right, var(--active-color) 0%, var(--active-color) 40%, var(--background-color) 0%, var(--background-color) 100%);
+    border-radius: 0px;
+    height: 10px;
+    width: calc(20% - 40px);
+    outline: none;
+    transition: background 450ms ease-in;
+    -webkit-appearance: none;
+}
+
+.progress-range::-webkit-slider-thumb,
+.volume-range::-webkit-slider-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    -webkit-appearance: none;
+    cursor: ew-resize;
+    background: #ffffff;
+}
+
+
+/* footer start */
+.footer-container {
+    max-width: 1440px;
+    min-height: 50px;
+
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--body-color);
+
+    font-size: var(--font-large);
+    line-height: 40px;
+    transition: 0.5s;
+}
+
+.footer-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-text {
+    padding-left: 20px;
+}
+
+.footer-link{
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 20px;
+}
+
+.footer-link::after, .footer-link:hover{
+    color: var(--hoover-color);
+}
+/* footer finish */

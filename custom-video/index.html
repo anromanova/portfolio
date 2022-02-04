@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>custom video player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<header class="header"></header>
+<body>
+    <main class="main">
+        <div class="container">
+            <div class="video-player">
+                <!-- <div class="poster"></div> -->
+                <video class="video" src="assets/video/video.mp4" poster="./assets/video-player.jpg"></video>
+                <button class="video-player-button"></button>
+            </div>
+            <div class="controls">
+                <div class="control-ico play-ico"></div>
+                <input type="range" value="0" min="0" max="100" step="1" class="progress-range">
+                <div class="control-ico volume-ico"></div>
+                <input type="range" value="40" min="0" max="100" step="1" class="volume-range">
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-content">
+                <p class="footer-text">©</p>
+                <p class="footer-text">2022</p>
+                <a class="footer-link" href="https://github.com/anromanova" target="_blank" title="anromanova">github</a>
+            </div>
+            <a class="footer-link" href="https://rs.school/js-stage0/" target="_blank">Rolling Scopes School</a>
+        </div>
+    </footer>
+    <script src="index.js"></script>
+</body>
+</html>
