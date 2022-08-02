@@ -11,6 +11,12 @@
     --hover-color-2: #fff;
     --button-text-color-1: #000;
     --button-text-color-2: #bdae82;
+    --title-color: #bdae82;
+    --hoover-color: #bdae82;
+    --font-standard: 18px;
+    --font-large: 20px;
+    --active-color: #bdae82;
+    --background-color: #9b9e9f;
   }
 
   :root[data-theme='dark-theme'] {
@@ -564,7 +570,7 @@ img {
     float: right;
 }
 
-input {
+.contacts input {
     color: transparent;
     width: 450px;
     height: 50px;
@@ -937,4 +943,145 @@ textarea {
     .contacts-card {
         width: 320px;
     }
+}
+
+/* video */
+
+.video-player {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    max-height: 705px;
+    overflow: hidden;
+}
+
+.video {
+    width: calc(100%);
+    height: auto;
+}
+
+.video-player-button {
+    position: absolute;
+    z-index: 10;
+    cursor: pointer;
+    background-image: url("./assets/svg/play-btn.svg");
+    height: 130px;
+    width: 130px;
+    background-color: transparent;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: none;
+    background-size: contain;
+    transition: 0.5s;
+}
+
+.video-player-button_hidden {
+    display: none;
+    cursor: pointer;
+    height: 130px;
+    width: 130px;
+    background-color: transparent;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: none;
+    background-size: contain;
+    transition: 0.5s;
+}
+
+.video-player-button:hover {
+filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(
+    7deg
+    ) brightness(92%) contrast(87%);
+}
+
+.controls {
+    display: flex;
+    position: absolute;
+    justify-content: space-around;
+    bottom: 0;
+    align-items: center;
+    width: calc(100%);
+    height: 60px;
+    padding: 20px;
+    transform: translateY(100%) translateY(-5px);
+    transition: 0.3s;
+    background: rgb(0, 0, 0, 0.7);
+}
+
+.controls-hide {
+    display: none;
+}
+
+.video-player:hover .controls{
+    transform: translateY(0);
+}
+
+.control-ico {
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.control-ico:hover {
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%) contrast(87%);
+}
+
+.play-ico {
+    background-image: url(./assets/svg/play.svg);
+}
+
+.pause-ico {
+    background-image: url(./assets/svg/pause.svg);
+}
+
+.volume-ico {
+    background-image: url(./assets/svg/volume.svg);
+}
+
+.mute-ico {
+    background-image: url(./assets/svg/mute.svg);
+}
+
+.exp-ico {
+    color: white;
+    background-image: url(./assets/svg/expand-solid.svg);
+}
+
+
+.progress-range {
+    background: linear-gradient(to right, var(--active-color) 0%, var(--active-color) 0%, var(--background-color) 0%, var(--background-color) 100%);
+    border-radius: 0px;
+    height: 10px;
+    width: calc(80% - 200px);
+    outline: none;
+    transition: background 450ms ease-in;
+    -webkit-appearance: none;
+}
+
+.volume-range {
+    background: linear-gradient(to right, var(--active-color) 0%, var(--active-color) 40%, var(--background-color) 0%, var(--background-color) 100%);
+    border-radius: 0px;
+    height: 10px;
+    width: calc(20% - 80px);
+    outline: none;
+    transition: background 450ms ease-in;
+    -webkit-appearance: none;
+}
+
+.progress-range::-webkit-slider-thumb,
+.volume-range::-webkit-slider-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    -webkit-appearance: none;
+    cursor: pointer;
+    background: #ffffff;
 }

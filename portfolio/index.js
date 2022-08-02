@@ -1,7 +1,3 @@
-console.log(
-    "Привет! :) \n(25/25) Смена изображений в секции portfolio  \n(25/25) Перевод страницы на два языка  \n(25/25) Переключение светлой и тёмной темы \n(5/5) Дополнительный функционал: сложные эффекты для кнопок при наведении и/или клике \n(80/85)=>75 обязательная часть и одно дополнение, при перезагрузке сохраняется только тема\nСпасибо за проверку!"
-)
-
 const i18Obj = {
     'en': {
       'skills': 'Skills',
@@ -161,31 +157,6 @@ function getTranslate(language) {
     )
       }
 
-// function setLocalStorage() {
-//     localStorage.setItem('lang', lang);
-//       }
-  
-//     window.addEventListener('beforeunload', setLocalStorage)
-
-// function getLocalStorage() {
-//       if(localStorage.getItem('lang')) {
-//         const lang = localStorage.getItem('lang');
-//         getTranslate(lang);
-//       }
-//     }
-
-//     window.addEventListener('load', getLocalStorage)
-
-// function toggleLanguage(event) {
-//     buttonLanguages.forEach((a) => a.classList.remove('active'));
-//     event.target.classList.toggle('active');
-//     event.target.classList.add('active');
-//   }
-
-//   russianLanguage.addEventListener('click', toggleLanguage);
-//   englishLanguage.addEventListener('click', toggleLanguage);
-
-
 // Theme switcher
 
 const toggleBtn = document.querySelector('.theme-logo-link');
@@ -203,7 +174,6 @@ function changeTheme(name) {
 
 if (currentTheme === 'light-theme') {
   theme.setAttribute('data-theme', currentTheme)
-  // toggleBtn.classList.add('moon')
 } else {
   changeTheme('dark-theme')
   toggleBtn.classList.add('moon')
@@ -219,12 +189,109 @@ toggleBtn.addEventListener('click', () => {
   }
 });
 
+const videoPlayer = document.querySelector('.video-player');
+const video = document.querySelector('.video');
+const playButtonControl = document.querySelector('.play-ico');
+const playButton = document.querySelector('.video-player-button');
+const progress = document.querySelector('.progress-range');
+const volume = document.querySelector('.volume-range');
+const volumeButton = document.querySelector('.volume-ico');
+const currentTimeElement = document.querySelector('.current-time');
+const durationTimeElement = document.querySelector('.duration-time');
+const control = document.querySelector('.controls');
+const fullscreen = document.querySelector('.exp-ico')
+  
+// Play/Pause video function
+function playVideo () {
+        if(video.paused) {
+            video.play()
+            playButtonControl.classList.toggle('pause-ico');
+            playButton.classList.toggle('video-player-button_hidden');
+        } else {
+            video.pause()
+            playButtonControl.classList.toggle('pause-ico');
+            playButton.classList.toggle('video-player-button_hidden');
+        }
+}
 
-// function changeTheme() {
-//     if(document.documentElement.hasAttribute('theme')){
-//         document.documentElement.removeAttribute('theme');
-//     }
-//     else{
-//         document.documentElement.setAttribute('theme', 'light-theme');
-//     }
-// };
+// Show current time and video duration
+function currentTime () {
+    let currMin = Math.floor(video.currentTime / 60)
+    let currSec = Math.floor(video.currentTime - currMin * 60)
+    let durMin = Math.floor(video.duration / 60)
+    let durSec = Math.floor(video.duration - durMin * 60)
+
+    currentTimeElement.innerHTML = `${currMin}:${currSec < 10 ? '0'+currSec : currSec}` 
+    durationTimeElement.innerHTML = `${durMin}:${durSec < 10 ? '0'+durSec : durSec}`
+}
+
+// Сhange the video with the slider
+function rangeVideo () {
+  const value = ((video.currentTime / video.duration)* 100);
+  progress.value = value;
+  progress.style.background = `linear-gradient(to right, #bdae82 0%, #bdae82 ${value}%, #9b9e9f ${value}%, #9b9e9f 100%)`
+}
+
+// Сhange the video progress bar with the slider 
+function rangeProgressBar (e) {
+  const progressTime = (e.offsetX / progress.offsetWidth)*video.duration;
+  video.currentTime = progressTime;
+}
+
+// Сhange the sound with the slider
+function rangeVolume () {
+      const value = this.value;
+      this.style.background = `linear-gradient(to right, #bdae82 0%, #bdae82 ${value*100}%, #9b9e9f ${value*100}%, #9b9e9f 100%)`
+      video.volume = value;
+      if (video.volume === 0) {
+        volumeButton.classList.remove('volume-ico');
+        volumeButton.classList.add('mute-ico');
+      }
+      else {
+        volumeButton.classList.remove('mute-ico');
+        volumeButton.classList.add('volume-ico');
+      }
+}
+
+// mute function
+function muteVolume () {
+    if (video.volume === 0) {
+        video.volume = 0.4;
+        volume.value = video.volume;
+        volumeButton.classList.toggle('volume-ico');
+        volumeButton.classList.toggle('mute-ico');
+      }
+      else {
+        video.volume = 0;
+        volume.value = video.volume;
+        volume.style.background = `linear-gradient(to right, #bdae82 0%, #bdae82 ${0}%, #9b9e9f ${100}%, #9b9e9f 100%)`
+        volumeButton.classList.toggle('mute-ico');
+        volumeButton.classList.toggle('volume-ico');
+      }
+}
+
+//fullscreen function
+function fullscrn () {
+  if (!document.fullscreenElement) {
+    videoPlayer.requestFullscreen();
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    }
+  }
+}
+
+video.addEventListener('timeupdate', rangeVideo);
+video.addEventListener('click', playVideo);
+video.addEventListener('timeupdate', currentTime);
+playButtonControl.addEventListener('click', playVideo);
+playButton.addEventListener('click', playVideo);
+volume.addEventListener('mousemove', rangeVolume);
+volumeButton.addEventListener('click', muteVolume);
+progress.addEventListener('click', rangeProgressBar)
+fullscreen.addEventListener('click',fullscrn);
+
+
+let mousedown = false;
+control.addEventListener('mousedown', () => mousedown = true);
+control.addEventListener('mouseup', () => mousedown = false);
